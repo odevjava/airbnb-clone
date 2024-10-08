@@ -28,8 +28,8 @@ export class CategoryService {
     },
     {
       icon: "tree",
-      displayName: "Treehouses",
-      technicalName: "TREEHOUSES",
+      displayName: "Treehouse",
+      technicalName: "TREEHOUSE",
       activated: false
     },
     {
@@ -53,7 +53,7 @@ export class CategoryService {
     {
       icon: "water",
       displayName: "Lake",
-      technicalName: "LAKE",
+      technicalName: "LAKES",
       activated: false
     },
     {
@@ -82,8 +82,8 @@ export class CategoryService {
     },
     {
       icon: "fire",
-      displayName: "Campers",
-      technicalName: "CAMPERS",
+      displayName: "Camping",
+      technicalName: "CAMPING",
       activated: false
     },
     {
@@ -101,7 +101,7 @@ export class CategoryService {
     {
       icon: "mug-saucer",
       displayName: "Bed & breakfasts",
-      technicalName: "BED_AND_BREAKFASTS",
+      technicalName: "BED_AND_BREAKFAST",
       activated: false
     },
     {
@@ -143,7 +143,7 @@ export class CategoryService {
   ];
 
   private changeCategory$ : BehaviorSubject<Category> =
-    new BehaviorSubject<Category>(this.getCategoryByDefault())
+    new BehaviorSubject<Category>(this.getCategoryByDefault());
   changeCategoryObs : Observable<Category> = this.changeCategory$.asObservable();
 
   changeCategory(category: Category): void {
@@ -158,8 +158,8 @@ export class CategoryService {
     return this.categories[0];
   }
 
-  getCategoryByTechnicalName(technicalName: CategoryName): Category | undefined{
-    return  this.categories.find(category: Category => category.technicalName === technicalName);
+  getCategoryByTechnicalName(technicalName: CategoryName): Category | undefined {
+    return this.categories.find(category => category.technicalName === technicalName);
   }
 
   constructor() {}
